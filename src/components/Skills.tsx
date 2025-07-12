@@ -1,7 +1,10 @@
 import React from 'react';
 import { Database, FileSpreadsheet, BarChart3, TrendingUp, Code, Search, Zap, PieChart } from 'lucide-react';
+import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 
 const Skills = () => {
+  const { elementRef, hasIntersected } = useIntersectionObserver();
+  
   const skillCategories = [
     {
       title: 'Database & Analytics',
@@ -50,7 +53,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="py-20" ref={elementRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -63,9 +66,13 @@ const Skills = () => {
 
         <div className="grid md:grid-cols-2 gap-8">
           {skillCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="glass-card p-8 rounded-2xl hover:scale-[1.02] transition-transform duration-300">
+            <div 
+              key={categoryIndex} 
+              className="glass-card p-8 rounded-2xl hover-lift group"
+              style={{ animationDelay: `${categoryIndex * 300}ms` }}
+            >
               <div className="flex items-center gap-4 mb-6">
-                <div className={`p-3 rounded-xl ${category.bgColor}`}>
+                <div className={`p-3 rounded-xl ${category.bgColor} group-hover:scale-110 transition-transform duration-300`}>
                   <category.icon className={`h-8 w-8 ${category.color}`} />
                 </div>
                 <h3 className="text-2xl font-bold">{category.title}</h3>
@@ -79,10 +86,13 @@ const Skills = () => {
                       <span className="text-sm font-medium text-primary">{skill.level}%</span>
                     </div>
                     
-                    <div className="w-full bg-muted rounded-full h-2">
+                    <div className="w-full bg-muted rounded-full h-2 overflow-hidden">
                       <div 
                         className="h-2 rounded-full bg-gradient-primary transition-all duration-1000 ease-out"
-                        style={{ width: `${skill.level}%` }}
+                        style={{ 
+                          width: hasIntersected ? `${skill.level}%` : '0%',
+                          transitionDelay: `${skillIndex * 200}ms`
+                        }}
                       />
                     </div>
                     

@@ -72,13 +72,17 @@ const Projects = () => {
 
         <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-8">
           {projects.map((project, index) => (
-            <Card key={project.id} className="glass-card border-0 hover:scale-[1.02] transition-transform duration-300">
+            <Card 
+              key={project.id} 
+              className="glass-card border-0 hover-lift group animate-fade-in"
+              style={{ animationDelay: `${index * 200}ms` }}
+            >
               <div className="grid lg:grid-cols-2 gap-8 p-8">
                 {/* Project Info */}
                 <div className="space-y-6">
                   <CardHeader className="p-0">
                     <div className="flex items-center gap-4 mb-4">
-                      <div className={`p-3 rounded-xl ${project.bgColor}`}>
+                      <div className={`p-3 rounded-xl ${project.bgColor} group-hover:scale-110 transition-transform duration-300`}>
                         <project.icon className={`h-8 w-8 ${project.color}`} />
                       </div>
                       <div>
@@ -133,10 +137,10 @@ const Projects = () => {
 
                 {/* Project Visual */}
                 <div className="flex items-center justify-center">
-                  <div className="w-full h-64 glass-card rounded-2xl flex items-center justify-center relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-primary opacity-10" />
+                  <div className="w-full h-64 glass-card rounded-2xl flex items-center justify-center relative overflow-hidden group-hover:pulse-glow transition-all duration-500">
+                    <div className="absolute inset-0 bg-gradient-primary opacity-10 group-hover:opacity-20 transition-opacity duration-300" />
                     <div className="text-center z-10">
-                      <project.icon className={`h-20 w-20 ${project.color} mx-auto mb-4`} />
+                      <project.icon className={`h-20 w-20 ${project.color} mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`} />
                       <h4 className="text-lg font-semibold">{project.title}</h4>
                       <p className="text-sm text-muted-foreground mt-2">Interactive Demo Available</p>
                     </div>

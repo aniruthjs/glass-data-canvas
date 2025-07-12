@@ -1,6 +1,8 @@
 import React from 'react';
 import { Download, Linkedin, Mail, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { AnimatedCounter } from '@/components/ui/animated-counter';
+import { FloatingElement, ParticleField } from '@/components/ui/floating-elements';
 
 const Hero = () => {
   const handleDownloadResume = () => {
@@ -84,22 +86,56 @@ const Hero = () => {
           {/* Profile Image/Animation */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
-              <div className="w-80 h-80 glass-card rounded-full flex items-center justify-center float-animation">
-                <div className="w-64 h-64 rounded-full bg-gradient-primary flex items-center justify-center">
-                  <div className="text-6xl font-bold text-primary-foreground">DA</div>
-                </div>
-              </div>
+              <ParticleField />
               
-              {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 glass-card rounded-xl flex items-center justify-center">
-                <span className="text-2xl">📊</span>
-              </div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 glass-card rounded-xl flex items-center justify-center">
-                <span className="text-2xl">📈</span>
-              </div>
-              <div className="absolute top-1/2 -left-8 w-12 h-12 glass-card rounded-lg flex items-center justify-center">
-                <span className="text-xl">💡</span>
-              </div>
+              <FloatingElement duration={4}>
+                <div className="w-80 h-80 glass-card rounded-full flex items-center justify-center relative overflow-hidden group">
+                  <div className="w-64 h-64 rounded-full bg-gradient-primary flex items-center justify-center transition-transform group-hover:scale-110 duration-500">
+                    <div className="text-6xl font-bold text-primary-foreground">DA</div>
+                  </div>
+                  
+                  {/* Animated Ring */}
+                  <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-pulse"></div>
+                </div>
+              </FloatingElement>
+              
+              {/* Floating elements with enhanced animations */}
+              <FloatingElement delay={0.5} className="absolute -top-4 -right-4">
+                <div className="w-16 h-16 glass-card rounded-xl flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+                  <span className="text-2xl">📊</span>
+                </div>
+              </FloatingElement>
+              
+              <FloatingElement delay={1} className="absolute -bottom-4 -left-4">
+                <div className="w-16 h-16 glass-card rounded-xl flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+                  <span className="text-2xl">📈</span>
+                </div>
+              </FloatingElement>
+              
+              <FloatingElement delay={1.5} className="absolute top-1/2 -left-8">
+                <div className="w-12 h-12 glass-card rounded-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+                  <span className="text-xl">💡</span>
+                </div>
+              </FloatingElement>
+
+              {/* Stats Cards */}
+              <FloatingElement delay={2} className="absolute top-8 -left-16">
+                <div className="glass-card px-4 py-2 rounded-lg text-center hover:scale-105 transition-transform">
+                  <div className="text-lg font-bold gradient-text">
+                    <AnimatedCounter end={50} suffix="+" />
+                  </div>
+                  <div className="text-xs text-muted-foreground">Projects</div>
+                </div>
+              </FloatingElement>
+              
+              <FloatingElement delay={2.5} className="absolute bottom-8 -right-16">
+                <div className="glass-card px-4 py-2 rounded-lg text-center hover:scale-105 transition-transform">
+                  <div className="text-lg font-bold gradient-text">
+                    <AnimatedCounter end={3} suffix="+" />
+                  </div>
+                  <div className="text-xs text-muted-foreground">Years Exp</div>
+                </div>
+              </FloatingElement>
             </div>
           </div>
         </div>
