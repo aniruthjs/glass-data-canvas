@@ -6,11 +6,12 @@ import { FloatingElement, ParticleField } from '@/components/ui/floating-element
 
 const Hero = () => {
   const handleDownloadResume = () => {
-    // In a real application, this would download the actual resume
     const link = document.createElement('a');
-    link.href = '#'; // Replace with actual resume URL
+    link.href = '/Data_Analyst_Resume.pdf'; // Path relative to public folder
     link.download = 'Data_Analyst_Resume.pdf';
+    document.body.appendChild(link);
     link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -21,7 +22,7 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                Hi, I'm a{' '}
+                Hi, I'm {'anirudh achugatla'}, a{' '}
                 <span className="gradient-text">Data Analyst</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
@@ -57,25 +58,25 @@ const Hero = () => {
                   variant="outline"
                   size="icon"
                   className="glass-card h-12 w-12 rounded-xl hover:text-primary"
-                  onClick={() => window.open('https://linkedin.com/in/yourprofile', '_blank')}
+                  onClick={() => window.open('https://linkedin.com/in/anirudhachu', '_blank')}
                 >
                   <Linkedin className="h-5 w-5" />
                 </Button>
                 
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="glass-card h-12 w-12 rounded-xl hover:text-primary"
-                  onClick={() => window.open('mailto:your.email@example.com')}
+                <a
+                  href="mailto:anirudh.achu1434@gmail.com"
+                  className="glass-card h-12 w-12 rounded-xl hover:text-primary flex items-center justify-center border border-input bg-background shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  aria-label="Send email"
+                  tabIndex={0}
                 >
                   <Mail className="h-5 w-5" />
-                </Button>
+                </a>
                 
                 <Button
                   variant="outline"
                   size="icon"
                   className="glass-card h-12 w-12 rounded-xl hover:text-primary"
-                  onClick={() => window.open('https://github.com/yourprofile', '_blank')}
+                  onClick={() => window.open('https://github.com/aniruthjs', '_blank')}
                 >
                   <Github className="h-5 w-5" />
                 </Button>
@@ -89,9 +90,13 @@ const Hero = () => {
               <ParticleField />
               
               <FloatingElement duration={4}>
-                <div className="w-80 h-80 glass-card rounded-full flex items-center justify-center relative overflow-hidden group">
                   <div className="w-64 h-64 rounded-full bg-gradient-primary flex items-center justify-center transition-transform group-hover:scale-110 duration-500">
-                    <div className="text-6xl font-bold text-primary-foreground">DA</div>
+                    <img
+                      src="/profile.jpg"
+                      alt="Profile picture"
+                      className="w-full h-full object-cover rounded-full"
+                    />
+                  </div>
                   </div>
                   
                   {/* Animated Ring */}

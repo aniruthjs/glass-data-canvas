@@ -13,7 +13,8 @@ const Certificates = () => {
       description: 'Advanced SQL certification covering complex queries, joins, window functions, and database optimization.',
       skills: ['Advanced SQL', 'Query Optimization', 'Database Design', 'Performance Tuning'],
       status: 'Verified',
-      credentialUrl: '#',
+      credentialUrl: 'https://www.hackerrank.com/certificates/1e65df3ecec9',
+      image: '/sql_certificate.png', // Place the image in your public folder and use this path
       icon: '🏆',
       color: 'text-yellow-400',
       bgColor: 'bg-yellow-400/10'
@@ -75,6 +76,17 @@ const Certificates = () => {
                 <p className="text-muted-foreground leading-relaxed">
                   {cert.description}
                 </p>
+
+                {/* Certificate Image */}
+                {cert.image && (
+                  <a href={cert.credentialUrl} target="_blank" rel="noopener noreferrer">
+                    <img
+                      src={cert.image}
+                      alt={`${cert.title} certificate`}
+                      className="w-full max-w-md rounded-xl border mx-auto my-2"
+                    />
+                  </a>
+                )}
 
                 <div className="space-y-3">
                   <h4 className="font-semibold text-foreground">Key Skills Covered:</h4>
