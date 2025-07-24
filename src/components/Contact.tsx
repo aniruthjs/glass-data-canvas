@@ -252,7 +252,7 @@ const Contact = () => {
         {/* Footer */}
         <div className="mt-16 pt-8 border-t border-border/50 text-center">
           <p className="text-muted-foreground">
-            © 2024 Data Analyst Portfolio. Built with passion for data and analytics.
+            © 2025 Data Analyst Portfolio. Built with passion for data and analytics.
           </p>
         </div>
       </div>

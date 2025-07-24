@@ -9,7 +9,7 @@ const Certificates = () => {
       id: 1,
       title: 'SQL Certification',
       issuer: 'HackerRank',
-      date: '2024',
+      date: '2025',
       description: 'Advanced SQL certification covering complex queries, joins, window functions, and database optimization.',
       skills: ['Advanced SQL', 'Query Optimization', 'Database Design', 'Performance Tuning'],
       status: 'Verified',
@@ -20,14 +20,16 @@ const Certificates = () => {
       bgColor: 'bg-yellow-400/10'
     },
     {
+
       id: 2,
       title: 'Data Analyst Simulator',
       issuer: 'Forge',
-      date: '2024',
+      date: '2025',
       description: 'Comprehensive data analysis program simulating real-world business scenarios and analytical challenges.',
       skills: ['Data Analysis', 'Business Intelligence', 'Statistical Analysis', 'Data Visualization'],
       status: 'Completed',
-      credentialUrl: '#',
+      credentialUrl: 'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_jwdpqhCSGXpgY4E77_1751303678647_completion_certificate.pdf',
+      image: '/Certificate.png',
       icon: '📊',
       color: 'text-blue-400',
       bgColor: 'bg-blue-400/10'
