@@ -19,24 +19,24 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'your.email@example.com',
-      link: 'mailto:your.email@example.com',
+      value: 'anirudh.achu1434@gmail.com',
+      link: 'mailto:anirudh.achu1434@gmail.com',
       color: 'text-blue-400',
       bgColor: 'bg-blue-400/10'
     },
     {
       icon: Github,
       label: 'GitHub',
-      value: 'github.com/yourprofile',
-      link: 'https://github.com/yourprofile',
+      value: 'github.com/aniruthjs',
+      link: 'https://github.com/aniruthjs',
       color: 'text-purple-400',
       bgColor: 'bg-purple-400/10'
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      value: 'linkedin.com/in/yourprofile',
-      link: 'https://linkedin.com/in/yourprofile',
+      value: 'linkedin.com/in/anirudhachu',
+      link: 'https://linkedin.com/in/anirudhachu',
       color: 'text-blue-500',
       bgColor: 'bg-blue-500/10'
     }
@@ -45,7 +45,7 @@ const Contact = () => {
   const platforms = [
     {
       name: 'HackerRank',
-      url: 'https://hackerrank.com/yourprofile',
+      url: 'https://hackerrank.com/profile/anirudh_achugat1',
       description: '5-Star SQL Badge',
       icon: '🏆'
     },
