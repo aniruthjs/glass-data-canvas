@@ -90,6 +90,7 @@ const Hero = () => {
               <ParticleField />
               
               <FloatingElement duration={4}>
+                <div className="relative">
                   <div className="w-64 h-64 rounded-full bg-gradient-primary flex items-center justify-center transition-transform group-hover:scale-110 duration-500">
                     <img
                       src="/profile.jpg"
@@ -97,8 +98,6 @@ const Hero = () => {
                       className="w-full h-full object-cover rounded-full"
                     />
                   </div>
-                  </div>
-                  
                   {/* Animated Ring */}
                   <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-pulse"></div>
                 </div>
